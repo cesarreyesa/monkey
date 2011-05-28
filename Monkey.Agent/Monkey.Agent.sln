@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monkey.Agent", "Monkey.Agent\Monkey.Agent.csproj", "{0147B18C-643A-4C53-9C0F-1DD7E6EBB666}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monkey.HttpAgent", "Monkey.HttpAgent\Monkey.HttpAgent.csproj", "{0DB448A6-A041-4F5A-8F36-1C6BA760DB5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0147B18C-643A-4C53-9C0F-1DD7E6EBB666}.Debug|x86.ActiveCfg = Debug|x86
+		{0147B18C-643A-4C53-9C0F-1DD7E6EBB666}.Debug|x86.Build.0 = Debug|x86
+		{0147B18C-643A-4C53-9C0F-1DD7E6EBB666}.Release|x86.ActiveCfg = Release|x86
+		{0147B18C-643A-4C53-9C0F-1DD7E6EBB666}.Release|x86.Build.0 = Release|x86
+		{0DB448A6-A041-4F5A-8F36-1C6BA760DB5E}.Debug|x86.ActiveCfg = Debug|x86
+		{0DB448A6-A041-4F5A-8F36-1C6BA760DB5E}.Debug|x86.Build.0 = Debug|x86
+		{0DB448A6-A041-4F5A-8F36-1C6BA760DB5E}.Release|x86.ActiveCfg = Release|x86
+		{0DB448A6-A041-4F5A-8F36-1C6BA760DB5E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
