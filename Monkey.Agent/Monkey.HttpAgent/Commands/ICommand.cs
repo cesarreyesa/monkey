@@ -5,8 +5,9 @@ using System.Text;
 
 namespace Monkey.HttpAgent.Commands
 {
-   interface ICommand
+   internal abstract class Command
    {
-      void Run();
+      public string Name;
+      public abstract void Run();
    }
 }

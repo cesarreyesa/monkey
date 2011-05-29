@@ -55,8 +55,10 @@
     <Compile Include="Action.cs" />
     <Compile Include="Commands\PostgreSQLBackupCommand.cs" />
     <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\SyncActionsCommand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

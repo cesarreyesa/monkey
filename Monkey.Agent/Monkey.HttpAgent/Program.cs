@@ -28,7 +28,6 @@ namespace Monkey.HttpAgent
          // runs scheduler on calling thread. this method will block until
          // someone calls Stop() on the scheduler.
          scheduler.Start();
-
       }
 
       class SchedulerDelegate : ISchedulerDelegate
@@ -36,7 +35,6 @@ namespace Monkey.HttpAgent
          public void OnException(IScheduler scheduler, Exception e)
          {
             Debug.WriteLine("Error on scheduler.");
-            e.DebugStacktrace();
          }
 
          public void OnStop(IScheduler scheduler)
@@ -70,12 +68,13 @@ namespace Monkey.HttpAgent
 
       class BufferedBody : IDataProducer
       {
-         ArraySegment<byte> data;
+         readonly ArraySegment<byte> data;
 
          public BufferedBody(string data) : this(data, Encoding.UTF8) { }
-         public BufferedBody(string data, Encoding encoding) : this(encoding.GetBytes(data)) { }
-         public BufferedBody(byte[] data) : this(new ArraySegment<byte>(data)) { }
-         public BufferedBody(ArraySegment<byte> data)
+         private BufferedBody(string data, Encoding encoding) : this(encoding.GetBytes(data)) { }
+         private BufferedBody(byte[] data) : this(new ArraySegment<byte>(data)) { }
+
+         private BufferedBody(ArraySegment<byte> data)
          {
             this.data = data;
          }

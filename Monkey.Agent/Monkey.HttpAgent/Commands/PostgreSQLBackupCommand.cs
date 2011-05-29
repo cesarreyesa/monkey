@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Monkey.HttpAgent.Commands
 {
-   class PostgreSQLBackupCommand : ICommand
+   class PostgreSQLBackupCommand : Command
    {
       private readonly string dbName;
       private readonly string userName;
@@ -21,7 +21,7 @@ namespace Monkey.HttpAgent.Commands
          this.dumpExePath = dumpExePath;
       }
 
-      public void Run()
+      public override void Run()
       {
          Console.WriteLine("Haciendo backup de la base de datos {0} a la ruta {1}", dbName, destination);
          var arguments = " -U " + userName + " -f " + destination + " " + dbName;

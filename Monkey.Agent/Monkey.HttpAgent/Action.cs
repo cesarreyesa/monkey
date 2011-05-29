@@ -10,13 +10,15 @@ namespace Monkey.HttpAgent
    {
       public string Id { get; set; }
 
-      public ICommand Command { get; set; }
+      public Command Command { get; set; }
 
       public string Arg1 { get; set; }
 
       public string Arg2 { get; set; }
 
       public string Arg3 { get; set; }
+
+      public string Arg4 { get; set; }
 
    }
 
