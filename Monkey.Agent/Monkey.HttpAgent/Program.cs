@@ -48,6 +48,8 @@ namespace Monkey.HttpAgent
          public void OnRequest(HttpRequestHead request, IDataProducer requestBody,
              IHttpResponseDelegate response)
          {
+            if(request.Uri == "/favicon.ico") return;
+
             var actionName = request.Uri.Substring(1);
             var action = Repository.GetAction(actionName);
             action.Command.Run();

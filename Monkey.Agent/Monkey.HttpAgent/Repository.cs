@@ -35,14 +35,22 @@ namespace Monkey.HttpAgent
                action = new Action();
                action.Id = reader.GetString(reader.GetOrdinal("id"));
                action.Arg1 = reader.GetString(reader.GetOrdinal("arg1"));
-               action.Arg2 = reader.GetString(reader.GetOrdinal("arg2"));
+               var arg2 = reader["arg2"];
+               action.Arg2 = arg2.ToString();
                //action.Arg3 = reader.GetString(reader.GetOrdinal("arg3"));
 
                if (reader.GetString(reader.GetOrdinal("command")) == "pgdb-backup")
                {
                   action.Command = new PostgreSQLBackupCommand(action.Arg1, action.Arg2, action.Arg3, action.Arg4);
                }
-               action.Command.Run();
+               if (reader.GetString(reader.GetOrdinal("command")) == "execute-bat")
+               {
+                  action.Command = new ExecuteBatCommand(action.Arg1);
+               }
+               if (reader.GetString(reader.GetOrdinal("command")) == "sync-actions")
+               {
+                  action.Command = new SyncActionsCommand(action.Arg1);
+               }
             }
          }
          finally

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Monkey.Agent
 
       protected override void OnStart(string[] args)
       {
-         
+         new Process {StartInfo = new ProcessStartInfo(ConfigurationManager.AppSettings["agent.path"])}.Start();
       }
 
       protected override void OnStop()
